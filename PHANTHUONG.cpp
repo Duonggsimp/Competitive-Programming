@@ -1,3 +1,6 @@
+//http://thaydong.ddns.net/problem.php?id=1759
+
+
 #include <bits/stdc++.h>
 using namespace std;
 long long n;
