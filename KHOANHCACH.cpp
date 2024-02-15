@@ -1,30 +1,38 @@
-//http://thaydong.ddns.net/problem.php?id=1721
-
-
 #include <bits/stdc++.h>
+#define ll long
+#define fi first
+#define se second
+#define pb push_back
+#define runfast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 using namespace std;
-long long n,k;
-long long res=-1;
-map<long long,long long>m;
-long long a[1000005];
-int main(){
-    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-    cin>>n>>k;
-    for(int i=1;i<=n;i++)
-        cin>>a[i];
-   for(int i=1;i<=n;i++)
-   {
-        if (m.find(a[i])==m.end())
-        m[a[i]]=i;
-       if(m.find(a[i]-k)!=m.end()){
-       res=max(res,i-m[a[i]-k]);
-       }  else
-       if(m.find(k+a[i])!=m.end()){
-       res=max(res,i-m[k+a[i]]);
-       }
-   }
-   if (res==30852)
-   cout<<30907; else
-   cout<<res;
-   return 0;
+const int N=1e6+5;
+long a[N], n, k, l, r, d ,vt ,ma;
+int main()
+{
+  runfast;
+  
+  #ifndef ONLINE_JUDGE
+  freopen(_FILE".inp","r",stdin);
+  freopen(_FILE".out","w",stdout);
+  #endif
+  
+  cin >> n >> k;
+  ll s = 0;
+  map <ll, ll> mp;
+
+  for (long i=1; i<=n ;i++){
+    cin >> a[i];
+  }
+
+  for (long i=1; i<=n ;i++){
+    if (mp.find(a[i]-k) != mp.end()) ma = max(ma,i-mp[a[i]-k]);
+    if (mp.find(a[i]+k) != mp.end()) ma = max(ma,i-mp[a[i]+k]);
+    if (mp.find(a[i]) == mp.end()) mp[a[i]] = i;
+    }
+
+    if (ma == 0)
+        cout << -1; else
+        cout << ma;
+  return 0;
 }
+
