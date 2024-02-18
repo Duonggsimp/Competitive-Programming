@@ -30,7 +30,6 @@ int main(){
     for(int i=2; i<=n; i++){
         if(f[i]){
             sum=max(a[i], sum+a[i]);
-            cout<<sum<<' ';
             res=max(res, sum);
         }
         else
