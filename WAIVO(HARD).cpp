@@ -40,8 +40,7 @@ int main()
 
     ll maxx = 1;
     for(long i=1; i<=n; i++)
-        if (2*min(t[i],f[i])-1 > maxx)
-        maxx = 2*min(t[i],f[i])-1;
+       maxx= max(maxx,min(t[i],f[i])*2-1); 
     cout << maxx;
     return 0;
 }
