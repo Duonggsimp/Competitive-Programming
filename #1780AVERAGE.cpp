@@ -1,26 +1,36 @@
-//http://chuyentin.ddns.net/problem.php?id=1780
-
 #include <bits/stdc++.h>
+#define ll long long
+#define fi first
+#define se second
+#define pb push_back
+#define runfast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 using namespace std;
-long n,ma,s,k;
-int main(){
-    cin>>n>>k;
-    int a[n];
-    unordered_map<long,long>mp ;
-    for (long i;i<n;i++)
-       { cin>>a[i];
-       a[i]=a[i]-k; } 
-   for (long i;i<n;i++){
+const int N=1e5+5;
+long a[N], n, k, l, r, d ,vt ,ma;
+int main()
+{
+  runfast;
+  cin >> n >> k;
+  ll s = 0;
+  for (long i=1; i<=n ;i++){
+    cin >> a[i];
+    a[i] -= k;
+  }
+  map <ll, ll> mp;
+  for (long i=1; i<=n ;i++){
     s+=a[i];
     if (s==0)
-        ma=i+1;
-    if (mp.find(s)!=mp.end())
-        ma=max(ma,i-mp[s]);
-    else mp[s]=i;
-   }
-   if (ma==0)
-   cout<<-1; else
-    cout<<ma;
-    return 0;
+        ma = max(ma,i);
+    if (mp.find(s)==mp.end())
+        mp[s]=i; else
+    if (i-mp[s]>ma){
+        vt = mp[s]+1;
+        ma = i-mp[s];
+    }
+  }
+  if (vt == 0){
+    cout << -1;
+  } else
+  cout << ma;
+  return 0;
 }
- 
