@@ -1,3 +1,5 @@
+//https://oj.vnoi.info/problem/th_thpt_22_c
+
 #include <bits/stdc++.h>
 #define ll long long
 #define fi first
