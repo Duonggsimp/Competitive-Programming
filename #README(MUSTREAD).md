@@ -8,4 +8,4 @@ kho code của Dương, cái bài được lấy từ trang:
 
 -v.v
 
--CODE PHỤC VỤ MỤC ĐÍCH THAM KHẢO, KHÔNG COPY-PASTE NHẮM TÔN TRỌNG CHẤT XÁM CỦA NGƯỜI VIẾT- 
+-CODE PHỤC VỤ MỤC ĐÍCH THAM KHẢO, KHÔNG COPY-PASTE NHẰM TÔN TRỌNG CHẤT XÁM CỦA NGƯỜI VIẾT- 
