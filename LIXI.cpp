@@ -1,22 +1,34 @@
 #include <bits/stdc++.h>
+#define ll long long
+#define fi first
+#define se second
+#define xn '\n'
 using namespace std;
-long a,b,n,dem,tong;
-int main ()
-{
-    cin>>n;
-    pair <long,long> m[n+1];
-    for(long i=0;i<n;i++)
-    {
-        cin>>a>>b;
-        dem=dem+b;
-        m[i]=make_pair(b,a);
+const int N = 1e6+5;
+const ll mo = 1e9+7;
+
+ll n,m,k,x;
+ll d;
+ll res;
+
+
+int main(){
+
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+
+    cin >> n;
+    pair <ll, ll> a[n+5];
+    for (long i=1; i<=n; i++){
+        cin >> a[i].se >> a[i].fi;
+        d += a[i].fi;
     }
-    sort(m,m+n,greater<pair<long,long>>());
-    //reverse(m,m+n);
-    //for (auto it:m)
-       //cout<<' '<<endl;
-    for (long i=0;i<=dem;i++)
-    tong=tong+m[i].second;
-    cout<<tong;
+    sort(a+1,a+n+1,greater<pair<ll, ll>>());
+    for (long i=1; i<=d+1; i++){
+        res += a[i].se;
+    }
+
+    cout << res;
     return 0;
 }
+
