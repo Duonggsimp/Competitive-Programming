@@ -6,7 +6,7 @@
 using namespace std;
 const int N=1e5+5;
 
-long a[N], n, k, l, r, d ,vt ,ma;
+ll a[N], n, k, l, r, d ,vt ,ma;
 
 int main(){
   
