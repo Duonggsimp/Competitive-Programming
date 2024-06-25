@@ -6,7 +6,8 @@
 using namespace std;
 const int N=1e5+5;
 
-ll a[N], n, k, l, r, d ,vt ,ma;
+ll n,k; 
+ll a[N],vt ,maxx;
 
 int main(){
   
@@ -18,21 +19,22 @@ int main(){
     cin >> a[i];
     a[i] -= k;
   }
+  
   map <ll, ll> mp;
   for (long i=1; i<=n ;i++){
     s+=a[i];
     if (s==0)
-        ma = max(ma,i);
+        maxx = max(maxx,i);
     if (mp.find(s)==mp.end())
         mp[s]=i; else
-    if (i-mp[s]>ma){
+    if (i-mp[s] > maxx){
         vt = mp[s]+1;
-        ma = i-mp[s];
+        maxx = i-mp[s];
     }
   }
   if (vt == 0){
     cout << -1;
   } else
-  cout << ma;
+  cout << maxx;
   return 0;
 }
